@@ -1,0 +1,50 @@
+body{
+    height: 100vh;
+    background-color: rgb(44, 43, 43);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+.menu-btn-burger{
+    width: 125px;
+    height: 9px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, .3);
+    background-color: white;
+    transition: all .5s ease-in-out;
+}
+.menu-btn-burger::after,
+.menu-btn-burger::before{
+    content: '';
+    width: 125px;
+    position: absolute;
+    height: 9px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, .3);
+    background-color: white;
+    transition: all .5s ease-in-out;
+}
+.menu-btn-burger::after{
+    transform: translateY(-35px);
+}
+.menu-btn-burger::before{
+    transform: translateY(35px);
+}
+/* animacija za burger menu */
+.menu-btn.open .menu-btn-burger{
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+.menu-btn.open .menu-btn-burger::before{
+    transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn-burger::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+}
